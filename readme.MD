@@ -1,161 +1,169 @@
 # Open WebUI Tools
 
-A small collection of tools for [Open WebUI](https://github.com/open-webui/open-webui):
-Gmail, Google Calendar and an OpenRouter ZDR filter.
+Une petite collection d'outils pour [Open WebUI](https://github.com/open-webui/open-webui) :
+Gmail, Google Calendar, et un filtre OpenRouter ZDR.
 
-Everything is plain Python. No MCP server, no relay service, no Docker —
-the tools talk straight to the Google APIs with `httpx` and OAuth2 refresh
-tokens. Drop the files in `tools/`, restart Open WebUI, fill in the Valves.
+Tout est en Python pur. Pas de serveur MCP, pas de service relais, pas de
+Docker — les outils appellent directement les API Google avec `httpx` et des
+refresh tokens OAuth2. Tu copies les fichiers dans `tools/`, tu redémarres
+Open WebUI, tu remplis les Valves.
 
-## Tools
+## Outils
 
-| Tool | File | What it does |
+| Outil | Fichier | Ce qu'il fait |
 | --- | --- | --- |
-| Gmail | [`tools/gmail.py`](tools/gmail.py) | List, search, read, draft, send, reply, archive, label and delete emails |
-| Google Calendar | [`tools/google-calendar.py`](tools/google-calendar.py) | Read, search, create, update and delete events, across several calendars |
-| OpenRouter ZDR | [`tools/openrouter_zdr.py`](tools/openrouter_zdr.py) | Forces `provider.zdr = true` on every OpenRouter request |
+| Gmail | [`tools/gmail.py`](tools/gmail.py) | Lister, chercher, lire, rédiger, envoyer, répondre, archiver, étiqueter et supprimer des emails |
+| Google Calendar | [`tools/google-calendar.py`](tools/google-calendar.py) | Consulter, chercher, créer, modifier et supprimer des événements, sur plusieurs calendriers |
+| OpenRouter ZDR | [`tools/openrouter_zdr.py`](tools/openrouter_zdr.py) | Force `provider.zdr = true` sur chaque requête OpenRouter |
 
-Both Google tools share the same shape: OAuth2 client ID + secret + a long
-lived refresh token, stored in the tool Valves (`Workspace → Tools → <tool>`).
+Les deux outils Google partagent la même mécanique : un Client ID OAuth2, un
+secret, et un refresh token longue durée, le tout stocké dans les Valves de
+l'outil (`Workspace → Tools → <outil>`).
 
 ## Installation
 
 ```bash
-cd /path/to/open-webui/backend/open_webui/tools
-cp /path/to/this/repo/tools/*.py .
+cd /chemin/vers/open-webui/backend/open_webui/tools
+cp /chemin/vers/ce/repo/tools/*.py .
 ```
 
-Restart Open WebUI. The tools appear under **Workspace → Tools**, and their
-Valves under **Tools → <name>**.
+Redémarre Open WebUI. Les outils apparaissent dans **Workspace → Tools**, et
+leurs Valves dans **Tools → <nom>**.
 
-Each tool declares its own dependencies in the docstring header, read by
-Open WebUI on load:
+Chaque outil déclare ses propres dépendances dans l'en-tête de sa docstring,
+lue par Open WebUI au chargement :
 
 - `gmail.py` → `httpx>=0.27`
 - `google-calendar.py` → `httpx>=0.27`
-- `openrouter_zdr.py` → nothing (pydantic only)
+- `openrouter_zdr.py` → rien (pydantic uniquement)
 
-## OAuth2 setup (Gmail & Calendar)
+## Configuration OAuth2 (Gmail & Calendar)
 
-Both use the same credentials; the scopes differ. Getting a refresh token
-takes about five minutes, once.
+Les deux utilisent les mêmes identifiants ; seuls les scopes diffèrent.
+Récupérer un refresh token prend environ cinq minutes, une seule fois.
 
-### 1. Create the OAuth client
+### 1. Créer le client OAuth
 
-In the [Google Cloud Console](https://console.cloud.google.com):
+Dans la [Google Cloud Console](https://console.cloud.google.com) :
 
 - **APIs & Services → Credentials → Create Credentials → OAuth 2.0 Client ID**
-- Application type: **Web application**
-- Authorized redirect URI: `https://developers.google.com/oauthplayground`
+- Type d'application : **Web application**
+- URI de redirection autorisé : `https://developers.google.com/oauthplayground`
 
-### 2. Enable the APIs you need
+### 2. Activer les API nécessaires
 
 - **APIs & Services → Library → "Gmail API" → Enable**
 - **APIs & Services → Library → "Google Calendar API" → Enable**
 
-### 3. Get a refresh token
+### 3. Obtenir un refresh token
 
-On the [OAuth 2.0 Playground](https://developers.google.com/oauthplayground):
+Sur le [OAuth 2.0 Playground](https://developers.google.com/oauthplayground) :
 
-1. Gear icon (top right) → *Use your own OAuth credentials* → paste your
-   Client ID and Client Secret.
-2. **Step 1** — enter the scope:
-   - `https://mail.google.com/` for Gmail
-   - `https://www.googleapis.com/auth/calendar` for Calendar
-   - or both, space-separated, if you want one refresh token for both tools
-3. **Authorize APIs** and sign in with the Google account you want to expose.
+1. Icône engrenage (en haut à droite) → *Use your own OAuth credentials* →
+   colle ton Client ID et ton Client Secret.
+2. **Step 1** — saisis le scope :
+   - `https://mail.google.com/` pour Gmail
+   - `https://www.googleapis.com/auth/calendar` pour Calendar
+   - ou les deux, séparés par une espace, si tu veux un seul refresh token
+     pour les deux outils
+3. **Authorize APIs** et connecte-toi avec le compte Google que tu veux exposer.
 4. **Step 2** — *Exchange authorization code for tokens*.
-5. Copy the **Refresh token**.
+5. Copie le **Refresh token**.
 
-### 4. Fill in the Valves
+### 4. Remplir les Valves
 
-| Valve | Notes |
+| Valve | Remarques |
 | --- | --- |
-| `CLIENT_ID` | OAuth2 client ID |
-| `CLIENT_SECRET` | OAuth2 client secret |
-| `REFRESH_TOKEN` | From step 3.5 |
-| `DEFAULT_MAX_RESULTS` / `MAX_RESULTS` | Page size for list/search calls |
-| `REQUEST_TIMEOUT` | HTTP timeout in seconds (default `15.0`) |
-| `DEFAULT_TIMEZONE` | Calendar only — IANA timezone for created events |
-| `DEFAULT_CALENDAR_ID` | Calendar only — `primary` for the main calendar |
-| `CALENDARS_TO_WATCH` | Calendar only — extra calendar IDs, comma-separated |
+| `CLIENT_ID` | Client ID OAuth2 |
+| `CLIENT_SECRET` | Client Secret OAuth2 |
+| `REFRESH_TOKEN` | Celui de l'étape 3.5 |
+| `DEFAULT_MAX_RESULTS` / `MAX_RESULTS` | Taille de page pour les appels liste/recherche |
+| `REQUEST_TIMEOUT` | Timeout HTTP en secondes (`15.0` par défaut) |
+| `DEFAULT_TIMEZONE` | Calendar uniquement — timezone IANA pour les événements créés |
+| `DEFAULT_CALENDAR_ID` | Calendar uniquement — `primary` pour le calendrier principal |
+| `CALENDARS_TO_WATCH` | Calendar uniquement — IDs de calendriers supplémentaires, séparés par des virgules |
 
-The refresh token is as sensitive as a password: anyone holding it can act on
-the account until it is revoked. Revoke it from
+Le refresh token est aussi sensible qu'un mot de passe : quiconque le détient
+peut agir sur le compte tant qu'il n'est pas révoqué. Pour le révoquer :
 [Google Account → Security → Third-party access](https://myaccount.google.com/connections).
 
-## Using the tools
+## Utilisation
 
 ### Gmail
 
-| Method | Description |
+| Méthode | Description |
 | --- | --- |
-| `check_auth_status()` | Confirms the connection and returns the mailbox address |
-| `get_unread_count()` | Unread count in the inbox, without reading any content |
-| `list_recent_emails(max_results, label)` | Recent messages from `INBOX`, `SENT`, `DRAFTS`, `SPAM`, `STARRED`, `UNREAD`, `TRASH` |
-| `search_emails(query, max_results)` | Gmail search syntax (`from:`, `subject:`, `has:attachment`, `after:` …) |
-| `get_email_content(message_id)` | Full body of one message |
-| `send_email(to, subject, body, cc, bcc)` | Sends a message |
-| `reply_to_email(message_id, body, reply_all)` | Replies inside the original thread |
-| `create_draft(to, subject, body)` | Saves a draft without sending it |
-| `archive_email(message_id)` | Removes `INBOX` |
-| `delete_email(message_id)` | Moves to trash |
-| `mark_as_read` / `mark_as_unread` | Toggles the `UNREAD` label |
-| `add_label(message_id, label)` | Adds a label |
+| `check_auth_status()` | Confirme la connexion et renvoie l'adresse de la boîte |
+| `get_unread_count()` | Nombre de non-lus dans la boîte de réception, sans lire le contenu |
+| `list_recent_emails(max_results, label)` | Messages récents de `INBOX`, `SENT`, `DRAFTS`, `SPAM`, `STARRED`, `UNREAD`, `TRASH` |
+| `search_emails(query, max_results)` | Syntaxe de recherche Gmail (`from:`, `subject:`, `has:attachment`, `after:` …) |
+| `get_email_content(message_id)` | Corps complet d'un message |
+| `send_email(to, subject, body, cc, bcc)` | Envoie un message |
+| `reply_to_email(message_id, body, reply_all)` | Répond dans le fil d'origine |
+| `create_draft(to, subject, body)` | Enregistre un brouillon sans l'envoyer |
+| `archive_email(message_id)` | Retire le label `INBOX` |
+| `delete_email(message_id)` | Met à la corbeille |
+| `mark_as_read` / `mark_as_unread` | Bascule le label `UNREAD` |
+| `add_label(message_id, label)` | Ajoute un label |
 
 ### Google Calendar
 
-| Method | Description |
+| Méthode | Description |
 | --- | --- |
-| `check_auth_status()` | Verifies the token and lists accessible calendars |
-| `list_calendars()` | IDs of every calendar the account can see |
-| `list_upcoming_events(max_results, calendar_id)` | Next events |
-| `search_events(query, time_min, time_max, max_results, calendar_id)` | Free-text search in a window |
-| `get_event_details(event_id, calendar_id)` | One event in full |
-| `create_event(summary, start_datetime, end_datetime, …)` | Creates an event, with description, location and attendees |
-| `quick_add_event(text)` | Natural language, e.g. *"Dentist tuesday 15:00"* |
-| `update_event(event_id, …)` | Partial update — only the fields you pass are touched |
-| `delete_event(event_id)` | Removes an event |
+| `check_auth_status()` | Vérifie le token et liste les calendriers accessibles |
+| `list_calendars()` | IDs de tous les calendriers visibles par le compte |
+| `list_upcoming_events(max_results, calendar_id)` | Prochains événements |
+| `search_events(query, time_min, time_max, max_results, calendar_id)` | Recherche plein texte sur une fenêtre de dates |
+| `get_event_details(event_id, calendar_id)` | Un événement en détail |
+| `create_event(summary, start_datetime, end_datetime, …)` | Crée un événement, avec description, lieu et participants |
+| `quick_add_event(text)` | En langage naturel, par ex. *"Dentiste mardi 15:00"* |
+| `update_event(event_id, …)` | Mise à jour partielle — seuls les champs passés sont touchés |
+| `delete_event(event_id)` | Supprime un événement |
 
-Dates are ISO 8601 (`2026-10-04T15:00:00+02:00`); `create_event` also accepts
-`all_day=True` with `YYYY-MM-DD` boundaries.
+Les dates sont en ISO 8601 (`2026-10-04T15:00:00+02:00`) ; `create_event`
+accepte aussi `all_day=True` avec des bornes en `YYYY-MM-DD`.
 
 ### OpenRouter ZDR
 
-A filter with a single Valve, `ZDR_ENABLED` (default `true`). When active it
-adds `provider: { zdr: true }` to every request body, so OpenRouter only routes
-to providers with zero data retention. If your OpenRouter plan does not
-support ZDR, requests will fail — turn the Valve off.
+Un filtre avec une seule Valve, `ZDR_ENABLED` (`true` par défaut). Quand elle
+est active, il ajoute `provider: { zdr: true }` au body de chaque requête,
+pour qu'OpenRouter ne route uniquement que vers des providers en Zero Data
+Retention. Si ton offre OpenRouter ne gère pas le ZDR, les requêtes échoueront
+— désactive alors la Valve.
 
-## Prompting
+## Prompter correctement
 
-The Gmail docstrings tell the model to ask before reading a mailbox, but a
-model can still be talked into it. If you care about that boundary, state it
-in a system prompt:
+Les docstrings de Gmail demandent déjà au modèle de confirmer avant de lire une
+boîte mail, mais un modèle peut toujours être convaincu de passer outre. Si
+cette limite compte pour toi, écris-la dans un system prompt :
 
-> Before any Gmail or Calendar tool call, ask me for confirmation and wait for
-> an explicit yes. Never send, delete or modify anything on the first request.
+> Avant tout appel à un outil Gmail ou Calendar, demande-moi confirmation et
+> attends un « oui » explicite. N'envoie, ne supprime et ne modifie rien à la
+> première demande.
 
-Anything the model does goes through your own Google account. Revoking access
-at any time is the fastest way to stop it.
+Tout ce que fait le modèle passe par ton propre compte Google. Révoquer
+l'accès est le moyen le plus rapide de l'arrêter.
 
 ## Licence
 
-**Non-Commercial + Attribution.** See [LICENSE](LICENSE).
+**Non commercial + attribution.** Voir [LICENSE](LICENSE).
 
-Personal, research and evaluation use is fine. Commercial use, resale, or
-use in a product you charge for requires written permission from the author,
-with credit. Contributions are welcome but you keep your copyright and are
-credited as a contributor.
+Usage personnel, recherche et évaluation : autorisé. Usage commercial,
+revente, ou intégration dans un produit payant : soumis à autorisation écrite
+de l'auteur, avec crédit.
 
-## Contributing
+Les contributions sont bienvenues, mais tu conserves ton copyright et tu es
+crédité comme contributeur.
 
-Issues and pull requests are welcome. Keep the existing style: French docstrings,
-English identifiers, `httpx` only, no new runtime dependencies.
+## Contribuer
 
-By contributing you agree that your work is licensed under the same terms, and
-that you are credited as a contributor.
+Issues et pull requests bienvenues. Respecte le style existant : docstrings
+en français, identifiants en anglais, `httpx` seulement, aucune nouvelle
+dépendance runtime.
 
-## Author
+En contribuant, tu acceptes que ta contribution soit publiée sous les mêmes
+termes, et tu seras crédité comme contributeur.
+
+## Auteur
 
 Anas — [GitHub](https://github.com/anas)
