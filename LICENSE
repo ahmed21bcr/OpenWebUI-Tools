@@ -1,0 +1,189 @@
+Attribution-NonCommercial License
+
+Copyright (c) 2026 Anas
+
+This repository ("the Work") is licensed under the terms below. The Work is
+provided as-is, without warranty of any kind.
+
+================================================================================
+1. DEFINITIONS
+================================================================================
+
+"Author"    : Anas, the sole copyright holder of the Work.
+"Work"      : the source code, documentation and any other content in this
+              repository, in any revision.
+"Licensee"  : any person or legal entity exercising the rights granted by
+              this License.
+"You"       : the Licensee.
+
+================================================================================
+2. GRANT OF RIGHTS — NON-COMMERCIAL USE
+================================================================================
+
+Subject to the conditions of Section 4, the Author grants You a worldwide,
+royalty-free, non-exclusive, non-transferable license to reproduce, modify
+and distribute the Work, and to create derivative works of the Work, for
+NON-COMMERCIAL purposes only.
+
+"Non-commercial" means use that is not primarily intended for, or directed
+toward, commercial advantage or monetary compensation. This includes personal,
+educational, research, hobby, evaluation, internal enterprise use that is not
+part of a product or service offered to third parties, and contributions back
+to the Work under Section 5.
+
+================================================================================
+3. COMMERCIAL USE — WRITTEN PERMISSION REQUIRED
+================================================================================
+
+Any use of the Work that is commercial is PROHIBITED without the prior
+written permission of the Author.
+
+Commercial use includes, without limitation:
+
+  - incorporating the Work, in whole or in part, into a product, service,
+    platform or codebase that is licensed, sold, monetised, sponsored or
+    otherwise provided to third parties for a fee or in exchange of
+    consideration of any kind, including advertising-supported and
+    subscription models;
+  - using the Work to provide a hosted, managed or SaaS offering;
+  - reselling, sublicensing, redistributing or offering the Work as part of a
+    commercial product, bundle or template;
+  - charging any fee for access to, or for delivery of, the Work or of any
+    derivative of it;
+  - using the Work, or any derivative of it, in the course of a business
+    activity or in work performed under a contract for a third party.
+
+To obtain commercial rights, contact the Author and request written
+authorisation, stating:
+
+  - the intended use;
+  - the product or service in which the Work would be embedded;
+  - the distribution model and any associated revenue;
+  - the credit line you agree to display.
+
+Permission is granted at the Author's sole discretion, may be limited in scope,
+duration or territory, may require payment, and is not granted to anyone else.
+Silence is not consent. A permission given to one party does not authorise
+any other party.
+
+================================================================================
+4. ATTRIBUTION — MANDATORY IN ALL CASES
+================================================================================
+
+For ANY use, commercial or not, You MUST:
+
+  4.1 Retain this LICENSE file, in full, in the source form of the Work and
+      in any copy or substantial portion of the Work You distribute;
+  4.2 Retain all copyright, licence and attribution notices present in the
+      Work;
+  4.3 Display a visible credit, in the documentation, user interface or
+      about section of any product or distribution containing the Work or a
+      derivative of it, in the following form or something substantively
+      similar:
+
+        "Includes work from Open WebUI Tools by Anas — https://github.com/
+         <repository-url> — used under the Attribution-NonCommercial License,
+         with permission."   (commercial use)
+
+        "Based on Open WebUI Tools by Anas — https://github.com/
+         <repository-url> — licensed under the
+         Attribution-NonCommercial License."   (non-commercial use)
+
+  4.4 Not remove, obscure or alter any authorship, credit or licence notice
+      in the Work or its derivatives.
+
+Attribution must be reasonably prominent: it may not be buried in a licence
+file alone, hidden behind a menu, or omitted from the primary user interface
+of a product.
+
+================================================================================
+5. CONTRIBUTIONS
+================================================================================
+
+Contributions submitted to the Work are accepted under the terms of this
+License. By submitting a contribution, You:
+
+  5.1 Grant the Author a worldwide, royalty-free, perpetual, irrevocable,
+      non-exclusive license to use, modify and distribute your contribution
+      as part of the Work;
+  5.2 Confirm that the contribution is your own original work, that you hold
+      all rights necessary to submit it, and that submitting it does not
+      infringe the rights of any third party;
+  5.3 Agree that your contribution is licensed under this same License;
+  5.4 Accept that the Author decides whether to accept a contribution, and may
+      reformat, adapt or decline it without obligation;
+  5.5 Retain the copyright in your contribution and, where the Author decides
+      to include it, will be credited as a contributor in the Work's history
+      and credits.
+
+The Author is under no obligation to credit any contribution, to display any
+contributor list, or to display attribution in a given location.
+
+================================================================================
+6. RESTRICTIONS
+================================================================================
+
+You may NOT, under any circumstances:
+
+  6.1 Use the Work commercially without the Author's prior written
+      permission, as set out in Section 3;
+  6.2 Remove, alter, obscure or fail to display the required attribution;
+  6.3 Use the Work in a way that suggests the Author endorses You, the
+      Licensee, or any product or third party;
+  6.4 Hold the Author liable for any use of the Work by You or by any third
+      party.
+
+================================================================================
+7. PATENTS AND TRADEMARKS
+================================================================================
+
+No patent or trademark rights are granted. This License does not grant You any
+right to use the names, trademarks, service marks or logos of the Author, other
+than to make factual statements about the origin of the Work as required for
+attribution under Section 4.
+
+================================================================================
+8. NO WARRANTY
+================================================================================
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. THE AUTHOR DOES
+NOT WARRANT THAT THE WORK WILL BE ERROR-FREE, SECURE, OR SUITABLE FOR ANY
+PURPOSE. THE AUTHOR IS NOT LIABLE FOR ANY CLAIM, DAMAGES, LOSS OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM
+OR IN CONNECTION WITH THE WORK OR ITS USE.
+
+The Work interacts with third-party services, including Google APIs and
+OpenRouter. You are responsible for complying with those services' terms of
+service and for the consequences of granting access to your own accounts.
+
+================================================================================
+9. TERMINATION
+================================================================================
+
+This License terminates automatically if You breach any of its terms. On
+termination, You must cease all use and distribution of the Work and delete
+every copy in your possession or control. Rights of the Author and of other
+Licensees who complied with this License survive termination.
+
+================================================================================
+10. MISCELLANEOUS
+================================================================================
+
+10.1 This License is the entire agreement between the parties concerning the
+     Work and supersedes all prior or additional terms.
+10.2 If any provision is held unenforceable, the remaining provisions remain
+     in force.
+10.3 Failure to enforce a provision is not a waiver of it.
+10.4 This License is governed by French law, excluding its conflict-of-law
+     rules and the United Nations Convention on Contracts for the
+     International Sale of Goods. The courts of France have exclusive
+     jurisdiction, without prejudice to any mandatory forum a consumer may
+     rely on.
+10.5 A permission granted under Section 3 overrides the non-commercial
+     restriction in Section 2 only to the extent it expressly says so.
+
+================================================================================
+END OF LICENSE
+================================================================================
