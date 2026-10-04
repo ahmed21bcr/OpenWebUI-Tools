@@ -8,8 +8,10 @@ description: >-
   confirmation explicite de l'utilisateur.
 required_open_webui_version: 0.4.0
 requirements: httpx>=0.27
-version: 1.1.0
-licence: MIT
+version: 1.1.1
+licence: Attribution-NonCommercial
+licence_file: LICENSE
+copyright: Copyright (c) 2026 Anas and Ahmed
 
 --- SETUP OAUTH2 ---
 1. Google Cloud Console → APIs & Services → Credentials → Create OAuth 2.0 Client ID

@@ -8,8 +8,10 @@ description: >-
   dans les Valves).
 required_open_webui_version: 0.4.0
 requirements: httpx>=0.27
-version: 1.1.0
-licence: MIT
+version: 1.1.1
+licence: Attribution-NonCommercial
+licence_file: LICENSE
+copyright: Copyright (c) 2026 Anas and Ahmed
 """
 
 # =============================================================================

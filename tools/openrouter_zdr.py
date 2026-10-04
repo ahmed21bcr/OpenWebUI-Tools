@@ -1,7 +1,10 @@
 """
 title: OpenRouter ZDR Filter
 description: Injecte provider.zdr=true dans chaque requête OpenRouter depuis OWUI.
-version: 1.0.0
+version: 1.0.1
+licence: Attribution-NonCommercial
+licence_file: LICENSE
+copyright: Copyright (c) 2026 Anas and Ahmed
 """
 
 from pydantic import BaseModel, Field

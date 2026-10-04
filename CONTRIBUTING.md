@@ -9,6 +9,10 @@ travail est publié sous la même Licence Attribution-NonCommercial, tu
 conserves ton copyright, et tu garantis qu'il s'agit de ton travail original,
 sans droits de tiers attachés.
 
+Le projet est codé et maintenu conjointement par Anas et Ahmed. Une
+contribution ne transfère pas ta propriété : tu restes titulaire du copyright
+sur ce que tu écris, et tu es crédité comme contributeur.
+
 ## Périmètre
 
 Les outils restent volontairement petits et dépendances légères. Garde ça en

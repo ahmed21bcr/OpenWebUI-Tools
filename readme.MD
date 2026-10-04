@@ -8,6 +8,9 @@ Docker — les outils appellent directement les API Google avec `httpx` et des
 refresh tokens OAuth2. Tu copies les fichiers dans `tools/`, tu redémarres
 Open WebUI, tu remplis les Valves.
 
+Un projet collaboratif, entre [Anas](https://github.com/ns-bcr) et
+[Ahmed](https://github.com/ahmed21bcr).
+
 ## Outils
 
 | Outil | Fichier | Ce qu'il fait |
@@ -150,7 +153,7 @@ l'accès est le moyen le plus rapide de l'arrêter.
 
 Usage personnel, recherche et évaluation : autorisé. Usage commercial,
 revente, ou intégration dans un produit payant : soumis à autorisation écrite
-de l'auteur, avec crédit.
+**des deux auteurs**, avec crédit.
 
 Les contributions sont bienvenues, mais tu conserves ton copyright et tu es
 crédité comme contributeur.
@@ -164,6 +167,18 @@ dépendance runtime.
 En contribuant, tu acceptes que ta contribution soit publiée sous les mêmes
 termes, et tu seras crédité comme contributeur.
 
-## Auteur
+## Auteurs
 
-Anas — [GitHub](https://github.com/anas)
+Ce projet est né d'une collaboration entre deux personnes :
+
+- **Anas** — [GitHub](https://github.com/ns-bcr) — outil Gmail
+  ([`tools/gmail.py`](tools/gmail.py))
+- **Ahmed** — [GitHub](https://github.com/ahmed21bcr) — outil Google Calendar
+  ([`tools/google-calendar.py`](tools/google-calendar.py))
+
+Le filtre OpenRouter ZDR ([`tools/openrouter_zdr.py`](tools/openrouter_zdr.py))
+est ouvert aux contributions.
+
+Les contributions de chacun restent sa propriété : chacun conserve le
+copyright sur ce qu'il a écrit, et les deux sont co-auteurs du projet dans son
+ensemble. Pour toute demande d'usage commercial, il faut l'accord des deux.

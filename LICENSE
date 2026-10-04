@@ -1,6 +1,6 @@
 Attribution-NonCommercial License
 
-Copyright (c) 2026 Anas
+Copyright (c) 2026 Anas and Ahmed
 
 This repository ("the Work") is licensed under the terms below. The Work is
 provided as-is, without warranty of any kind.
@@ -9,7 +9,12 @@ provided as-is, without warranty of any kind.
 1. DEFINITIONS
 ================================================================================
 
-"Author"    : Anas, the sole copyright holder of the Work.
+"Authors"   : Anas and Ahmed, the joint copyright holders of the Work. Each
+              retains the copyright in the contributions they authored; where
+              the Work was developed jointly, copyright is held jointly.
+"Author"    : the Authors, acting jointly, for any matter requiring their
+              agreement. Neither Author may grant the permissions reserved to
+              the Authors in Section 3 unilaterally.
 "Work"      : the source code, documentation and any other content in this
               repository, in any revision.
 "Licensee"  : any person or legal entity exercising the rights granted by
@@ -53,7 +58,7 @@ Commercial use includes, without limitation:
   - using the Work, or any derivative of it, in the course of a business
     activity or in work performed under a contract for a third party.
 
-To obtain commercial rights, contact the Author and request written
+To obtain commercial rights, contact the Authors and request written
 authorisation, stating:
 
   - the intended use;
@@ -61,10 +66,11 @@ authorisation, stating:
   - the distribution model and any associated revenue;
   - the credit line you agree to display.
 
-Permission is granted at the Author's sole discretion, may be limited in scope,
-duration or territory, may require payment, and is not granted to anyone else.
-Silence is not consent. A permission given to one party does not authorise
-any other party.
+Permission is granted at the Authors' sole discretion, acting jointly, may be
+limited in scope, duration or territory, may require payment, and is not granted
+to anyone else. Silence is not consent. A permission given to one party does
+not authorise any other party, and the agreement of one Author alone is not
+sufficient.
 
 ================================================================================
 4. ATTRIBUTION — MANDATORY IN ALL CASES
@@ -81,12 +87,12 @@ For ANY use, commercial or not, You MUST:
       derivative of it, in the following form or something substantively
       similar:
 
-        "Includes work from Open WebUI Tools by Anas — https://github.com/
-         <repository-url> — used under the Attribution-NonCommercial License,
-         with permission."   (commercial use)
+        "Includes work from Open WebUI Tools by Anas and Ahmed —
+         https://github.com/<repository-url> — used under the
+         Attribution-NonCommercial License, with permission."   (commercial use)
 
-        "Based on Open WebUI Tools by Anas — https://github.com/
-         <repository-url> — licensed under the
+        "Based on Open WebUI Tools by Anas and Ahmed —
+         https://github.com/<repository-url> — licensed under the
          Attribution-NonCommercial License."   (non-commercial use)
 
   4.4 Not remove, obscure or alter any authorship, credit or licence notice
@@ -103,20 +109,20 @@ of a product.
 Contributions submitted to the Work are accepted under the terms of this
 License. By submitting a contribution, You:
 
-  5.1 Grant the Author a worldwide, royalty-free, perpetual, irrevocable,
+  5.1 Grant the Authors a worldwide, royalty-free, perpetual, irrevocable,
       non-exclusive license to use, modify and distribute your contribution
       as part of the Work;
   5.2 Confirm that the contribution is your own original work, that you hold
       all rights necessary to submit it, and that submitting it does not
       infringe the rights of any third party;
   5.3 Agree that your contribution is licensed under this same License;
-  5.4 Accept that the Author decides whether to accept a contribution, and may
+  5.4 Accept that the Authors decide whether to accept a contribution, and may
       reformat, adapt or decline it without obligation;
-  5.5 Retain the copyright in your contribution and, where the Author decides
+  5.5 Retain the copyright in your contribution and, where the Authors decide
       to include it, will be credited as a contributor in the Work's history
       and credits.
 
-The Author is under no obligation to credit any contribution, to display any
+The Authors are under no obligation to credit any contribution, to display any
 contributor list, or to display attribution in a given location.
 
 ================================================================================
@@ -125,12 +131,12 @@ contributor list, or to display attribution in a given location.
 
 You may NOT, under any circumstances:
 
-  6.1 Use the Work commercially without the Author's prior written
+  6.1 Use the Work commercially without the Authors' prior written
       permission, as set out in Section 3;
   6.2 Remove, alter, obscure or fail to display the required attribution;
-  6.3 Use the Work in a way that suggests the Author endorses You, the
+  6.3 Use the Work in a way that suggests the Authors endorse You, the
       Licensee, or any product or third party;
-  6.4 Hold the Author liable for any use of the Work by You or by any third
+  6.4 Hold the Authors liable for any use of the Work by You or by any third
       party.
 
 ================================================================================
@@ -138,9 +144,9 @@ You may NOT, under any circumstances:
 ================================================================================
 
 No patent or trademark rights are granted. This License does not grant You any
-right to use the names, trademarks, service marks or logos of the Author, other
-than to make factual statements about the origin of the Work as required for
-attribution under Section 4.
+right to use the names, trademarks, service marks or logos of the Authors,
+other than to make factual statements about the origin of the Work as required
+for attribution under Section 4.
 
 ================================================================================
 8. NO WARRANTY
@@ -148,9 +154,9 @@ attribution under Section 4.
 
 THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. THE AUTHOR DOES
+FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. THE AUTHORS DO
 NOT WARRANT THAT THE WORK WILL BE ERROR-FREE, SECURE, OR SUITABLE FOR ANY
-PURPOSE. THE AUTHOR IS NOT LIABLE FOR ANY CLAIM, DAMAGES, LOSS OR OTHER
+PURPOSE. THE AUTHORS ARE NOT LIABLE FOR ANY CLAIM, DAMAGES, LOSS OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM
 OR IN CONNECTION WITH THE WORK OR ITS USE.
 
@@ -164,7 +170,7 @@ service and for the consequences of granting access to your own accounts.
 
 This License terminates automatically if You breach any of its terms. On
 termination, You must cease all use and distribution of the Work and delete
-every copy in your possession or control. Rights of the Author and of other
+every copy in your possession or control. Rights of the Authors and of other
 Licensees who complied with this License survive termination.
 
 ================================================================================
@@ -183,6 +189,10 @@ Licensees who complied with this License survive termination.
      rely on.
 10.5 A permission granted under Section 3 overrides the non-commercial
      restriction in Section 2 only to the extent it expressly says so.
+10.6 Where the Authors are to act jointly and one of them is unreachable,
+     the other's agreement binds the Work, but the resulting permission
+     applies only to the scope agreed. Neither Author may be compelled to
+     grant, or to be bound by, a permission they did not agree to.
 
 ================================================================================
 END OF LICENSE
